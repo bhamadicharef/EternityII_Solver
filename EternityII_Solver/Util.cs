@@ -248,7 +248,8 @@ namespace EternityII_Solver
 
                         foreach (var k in board_pieces)
                             if (k.PieceNumber == board[i * 16 + j].PieceNumber) { p = k; break; }
-
+                        
+                        % Rotation 0, same as template pieces
                         if (board[i * 16 + j].Rotations == 0)
                         {
                             url.Append((char)(p.TopSide + 'a'));
@@ -256,6 +257,7 @@ namespace EternityII_Solver
                             url.Append((char)(p.BottomSide + 'a'));
                             url.Append((char)(p.LeftSide + 'a'));
                         }
+                        % Rotation 90
                         if (board[i * 16 + j].Rotations == 1)
                         {
                             url.Append((char)(p.LeftSide + 'a'));
@@ -263,6 +265,7 @@ namespace EternityII_Solver
                             url.Append((char)(p.RightSide + 'a'));
                             url.Append((char)(p.BottomSide + 'a'));
                         }
+                        % Rotation 180
                         if (board[i * 16 + j].Rotations == 2)
                         {
                             url.Append((char)(p.BottomSide + 'a'));
@@ -270,6 +273,7 @@ namespace EternityII_Solver
                             url.Append((char)(p.TopSide + 'a'));
                             url.Append((char)(p.RightSide + 'a'));
                         }
+                        % Rotation 270 
                         if (board[i * 16 + j].Rotations == 3)
                         {
                             url.Append((char)(p.RightSide + 'a'));
